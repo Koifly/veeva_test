@@ -1,5 +1,4 @@
 import json
-import unittest
 from . test_data import weather_response, parsed_weather_data
 from .. data_processing import parse_weather_data
 

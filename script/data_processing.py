@@ -1,3 +1,16 @@
+import sys
+
+def sanitize_zip(zip_code):
+    if not zip_code.isdigit():
+        sys.exit(
+            "A ZIP code should only contain numbers. Please enter a valid ZIP code."
+        )
+    if len(zip_code) != 5:
+        sys.exit(
+            "A ZIP code should have 5 digits. Please enter a valid ZIP code."
+        )
+    return zip_code
+
 def get_lat_lon(location):
     return (location["lat"], location["lon"],)
 
