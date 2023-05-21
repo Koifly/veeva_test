@@ -2,8 +2,7 @@
 
 ## Veeva coding challenge
 
-How to run the weather script:
-Use Python 3.4 or above
+How to run the weather script (Use Python 3.7+):
 
 Clone repo:
 ```sh
@@ -15,10 +14,15 @@ Set up python venv in local repo (if on Windows I suggest to use Bash shell):
 ```sh
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 Run the script:
 ```sh
-# If the following is not executable run $chmod +x weather.py
-./weather.py
+python -m script.main -z [ZIP code] -k [API key]
+```
+
+To run the tests:
+```sh
+pytest
 ```

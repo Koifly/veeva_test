@@ -15,11 +15,9 @@ def get_lat_lon(location):
     return (location["lat"], location["lon"],)
 
 def get_date(date_and_hour):
-    date = date_and_hour.split()[0]
-    return date
+    return date_and_hour.split()[0]
 
 def get_rain(reading):
-    #import pdb; pdb.set_trace()
     try:
         return reading["rain"]["3h"]
     except:
