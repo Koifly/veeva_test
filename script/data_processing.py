@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-import requests
-from api_calls import get_geocoding_info, get_weather_info
-
 def get_lat_lon(location):
     return (location["lat"], location["lon"],)
 
@@ -62,34 +58,3 @@ def parse_weather_data(weather_data):
                     result.append(day_data)
 
     return result
-
-def display_data(weather):
-    print("# Date Temperature Precipitation")
-
-    for day in weather:
-        day_weather = "# {} {}/{} {}"
-        print(day_weather.format(
-            day["date"], day["hi"], day["lo"], round(day["rain"], 2)
-        ))
-
-
-if __name__ == "__main__":
-    zip_code = "20500"
-    try:
-        geo_response = get_geocoding_info(zip_code)
-        geo_response.raise_for_status()
-        try:
-            lat, lon = get_lat_lon(geo_response.json())
-            weather_response = get_weather_info(lat, lon)
-            weather_response.raise_for_status()
-
-            parsed_data = parse_weather_data(weather_response.json())
-            display_data(parsed_data)
-        except requests.exceptions.HTTPError as error:
-            print(error)
-        except requests.ConnectionError as error:
-            print(error)
-    except requests.exceptions.HTTPError as error:
-        print(error)
-    except requests.ConnectionError as error:
-        print(error)
