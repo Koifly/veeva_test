@@ -14,7 +14,7 @@ cd veeva_test
 Set up python venv in local repo (if on Windows I suggest to use Bash shell):
 ```sh
 python3 -m venv venv
-source ven/bin/activate
+source venv/bin/activate
 ```
 
 Run the script:
