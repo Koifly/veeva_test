@@ -43,8 +43,10 @@ def parse_weather_data(weather_data):
     result = []
     day_data = {}
 
+    readings_items = len(readings) - 1
+
     for i, reading in enumerate(readings):
-        islast = i == len(readings) - 1
+        islast = i == readings_items
 
         date = get_date(reading["dt_txt"])
         hi = reading["main"]["temp_max"]
