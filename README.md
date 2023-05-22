@@ -2,6 +2,8 @@
 
 ## Veeva coding challenge
 
+Written and tested on Pop!\_OS (based on Ubuntu).
+
 How to run the weather script (Use Python 3.7+):
 
 Clone repo:
